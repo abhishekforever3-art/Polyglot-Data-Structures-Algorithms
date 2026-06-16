@@ -1,4 +1,4 @@
-package String;
+/* package Strings;
 
 public class LeetSpeekTransilator {
     public static void main(String[] args) {
@@ -8,3 +8,4 @@ public class LeetSpeekTransilator {
         for (int i =0; i< length; )
     }
 }
+ */

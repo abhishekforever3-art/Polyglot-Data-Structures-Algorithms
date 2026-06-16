@@ -20,6 +20,7 @@ public class SlidingSubstringUniqeCharector {
                 maxLength = currentWindowLength;
             }
         }
+        
         System.out.println("Original String: " + s1);
         System.out.println("Max Unique Substring Length: " + maxLength);
     }

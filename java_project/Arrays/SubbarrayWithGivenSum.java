@@ -1,4 +1,4 @@
-package Array;
+package Arrays;
 
 public class SubbarrayWithGivenSum {
     public static void main(String[] args) {

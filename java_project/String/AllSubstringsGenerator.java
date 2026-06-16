@@ -13,6 +13,7 @@ public class AllSubstringsGenerator {
                 }
                 System.out.println("Start: " + start + ", End: " + end + " -> \"" + sub + "\"");
             }
+
         }
     }
-}
+}   

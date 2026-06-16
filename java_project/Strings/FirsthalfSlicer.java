@@ -1,4 +1,4 @@
-package String;
+package Strings;
 
 public class FirsthalfSlicer {
     public static void main(String[] args) {

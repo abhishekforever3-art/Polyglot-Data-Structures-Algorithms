@@ -1,4 +1,4 @@
-package String;
+package Strings;
 
 public class StringImmutability {
     public static void main(String[] args) {

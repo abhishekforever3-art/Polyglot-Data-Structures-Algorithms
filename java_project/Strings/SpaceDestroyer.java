@@ -1,4 +1,4 @@
-package String;
+package Strings;
 
 public class SpaceDestroyer {
     public static void main(String[] args) {

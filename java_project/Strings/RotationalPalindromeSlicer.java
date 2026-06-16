@@ -1,4 +1,4 @@
-package String;
+package Strings;
 
 public class RotationalPalindromeSlicer {
     public static void main(String[] args) {

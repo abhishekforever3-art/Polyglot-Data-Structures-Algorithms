@@ -1,4 +1,4 @@
-package String;
+package Strings;
 
 public class CasingTransmuter {
     public static void main(String[] args) {

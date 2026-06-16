@@ -1,4 +1,4 @@
-package Array;
+package Arrays;
 
 public class MinMaxDifferenceFinder {
     public static void main(String[] args) {

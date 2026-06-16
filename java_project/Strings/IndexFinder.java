@@ -1,4 +1,4 @@
-package String;
+package Strings;
 
 public class IndexFinder {
     public static void main(String[] args) {

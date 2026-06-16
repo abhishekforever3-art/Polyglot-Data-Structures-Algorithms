@@ -1,4 +1,4 @@
-package Array;
+package Arrays;
 
 public class ArrayElementInitializer {
     public static void main(String[] args) {

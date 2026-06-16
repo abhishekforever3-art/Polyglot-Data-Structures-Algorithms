@@ -17,7 +17,7 @@ public class MissingNumber {
     }
 } */
 
-package Array;
+package Arrays;
 
 public class MissingNumber {
     public static void main(String[] args) {
