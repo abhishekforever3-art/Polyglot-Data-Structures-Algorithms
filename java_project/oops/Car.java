@@ -34,16 +34,16 @@ public class Car extends Vehicle {
 
         int wheels = 4; 
 
-        Bike myBike = new Bike(make, model, colour, maxSpeed, wheels);
+        Car myCar = new Car(make, model, colour, maxSpeed, wheels);
         System.out.println( make + " Bike setup complete!");
 
-        myBike.startEngine(); 
+        myCar.startEngine(); 
         
-        myBike.drive(scanner); 
+        myCar.drive(scanner); 
         
         System.out.println("\n--- Pulling Over ---");
-        myBike.brake(myBike.currentSpeed); 
-        myBike.stopEngine();               
+        myCar.brake(myCar.currentSpeed); 
+        myCar.stopEngine();               
 
         scanner.close();
     }

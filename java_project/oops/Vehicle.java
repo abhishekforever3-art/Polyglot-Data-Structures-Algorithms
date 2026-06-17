@@ -66,6 +66,40 @@ public abstract class Vehicle {
     }
 
     public abstract void drive(java.util.Scanner scanner);
+
+    public static void main(String[] args) {
+    String testMake = "BMW";
+    int testModel = 2026;
+    String testColour = "Red";
+    int testMaxSpeed = 200;
+    int testWheels = 4;
+
+    Vehicle v1 = new Car(testMake, testModel, testColour, testMaxSpeed, testWheels);
+
+    java.util.Scanner scanner = new java.util.Scanner(System.in);
+    v1.startEngine();
+    v1.drive(scanner);
+    v1.brake(v1.currentSpeed);
+    v1.stopEngine();
+    
+    System.out.println();
+    
+    String tesMake = "KTM";
+    int tesModel = 2026;
+    String tesColour = "Red";
+    int tesMaxSpeed = 100;
+    int tesWheels = 2;
+
+    Vehicle v2 = new Bike(tesMake, tesModel, tesColour, tesMaxSpeed, tesWheels);
+
+    java.util.Scanner scanner1 = new java.util.Scanner(System.in);
+    v2.startEngine();
+    v2.drive(scanner1);
+    v2.brake(v1.currentSpeed);
+    v2.stopEngine();
+    scanner1.close();
+}  
+
     
 }
 
