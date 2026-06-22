@@ -1,12 +1,6 @@
 {
     "sqltools.connections": [
         {
-            "previewLimit": 50,
-            "driver": "SQLite",
-            "name": "MyFirstDB",
-            "database": "practice.db"
-        },
-        {
             "mysqlOptions": {
                 "authProtocol": "default",
                 "enableSsl": "Disabled"
@@ -16,10 +10,9 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "Uplift_project",
-            "database": "mysql",
-            "username": "root"
+            "name": "project_",
+            "username": "root",
+            "database": "mysql"
         }
-    ],
-    "sqltools.useNodeRuntime": true
+    ]
 }
