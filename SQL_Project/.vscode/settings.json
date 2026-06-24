@@ -19,6 +19,20 @@
             "name": "Uplift_project",
             "database": "mysql",
             "username": "root"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "rapido",
+            "database": "rapido",
+            "username": "root"
         }
     ],
     "sqltools.useNodeRuntime": true
