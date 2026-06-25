@@ -1,4 +1,4 @@
--- Active: 1782202923515@@127.0.0.1@3306@ecommerce
+-- Active: 1782279402261@@127.0.0.1@3306@ecommerce
 show tables;
 
 select * from customer; -- 1
@@ -59,4 +59,7 @@ select cust_id, sum(total_amount) from orders group by cust_id having sum(total_
 
 
 SELECT cust_id FROM orders GROUP BY cust_id HAVING COUNT(*) > 3;
-    
+
+SELECT orders.*, customer.first_name        
+FROM orders 
+INNER JOIN customer ON orders.cust_id = customer.cust_id;    
