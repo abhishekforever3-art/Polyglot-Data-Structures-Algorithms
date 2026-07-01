@@ -1,4 +1,4 @@
-from oops.NAUGHTEEN.bag import Bag
+""" from oops.NAUGHTEEN.bag import Bag
 from oops.NAUGHTEEN.shoe import Shoe
 
 def main():
@@ -25,4 +25,4 @@ def main():
         print("Error: Could not calculate Shoe bill.")
     
     if __name__ == "__main__":
-        main()
+        main() """
