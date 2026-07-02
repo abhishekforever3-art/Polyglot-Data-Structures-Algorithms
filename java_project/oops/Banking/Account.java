@@ -27,16 +27,21 @@ public class Account {
         return dateOpened;
     }
 
-    public void deposit(double amount){
-        if (amount >0){
-            this.balance +=amount;
+    public void deposit(double amount) throws InvalidAmountException {
+        if (amount <= 0) {
+            throw new InvalidAmountException("Business Error: Deposit amount must be greater than zero. Attempted: " + amount);
         }
+        this.balance += amount;
     }
 
-    public void withdraw (double amount){
-        if (amount >0 && amount<=this.balance){
-            this.balance -= amount;
+    public void withdraw(double amount) throws InvalidAmountException, InsufficientFundsException {
+        if (amount <= 0) {
+            throw new InvalidAmountException("Business Error: Withdrawal amount must be greater than zero. Attempted: " + amount);
         }
+        if (amount > this.balance) {
+            throw new InsufficientFundsException("Business Error: Insufficient funds. Current Balance: " + this.balance + ", Requested: " + amount);
+        }
+        this.balance -= amount;
     }
 
     

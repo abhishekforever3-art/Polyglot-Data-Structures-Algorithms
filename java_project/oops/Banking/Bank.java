@@ -25,30 +25,25 @@ public class Bank {
         return cc.getCustomerId();
     }
 
-    public Customer getCustomer(long customerId) {
+    public Customer getCustomer(long customerId) throws CustomerNotFoundException {
         for (Customer c : customers) {
             if (c.getCustomerId() == customerId) {
                 return c;
             }
         }
-        return null;
+        throw new CustomerNotFoundException("Business Error: Customer with ID " + customerId + " does not exist.");
     }
 
-    public boolean deposit(long customerId, double amount) {
-        Customer c = getCustomer(customerId);
-        if (c == null || amount <= 0) return false;
-        c.getAccount().deposit(amount);
-        return true;
+    public void deposit(long customerId, double amount) throws CustomerNotFoundException, InvalidAmountException {
+        Customer c = getCustomer(customerId); 
+        c.getAccount().deposit(amount);       
     }
 
-    public int withdraw(long customerId, double amount) {
-        Customer c = getCustomer(customerId);
-        if (c == null) return 0; 
-        if (amount <= 0) return -1;
-        if (c.getAccount().getBalance() < amount) return -2;
-        
-        c.getAccount().withdraw(amount);
-        return 1;
+    
+
+    public void withdraw(long customerId, double amount) throws CustomerNotFoundException, InvalidAmountException, InsufficientFundsException {
+        Customer c = getCustomer(customerId); 
+        c.getAccount().withdraw(amount);      
     }
 
     public double totalValue() {

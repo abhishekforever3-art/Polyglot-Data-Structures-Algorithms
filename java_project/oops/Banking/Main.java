@@ -1,4 +1,4 @@
-package oops.Banking;
+/* package oops.Banking;
 
 public class Main {
     public static void main(String[] args) {
@@ -70,5 +70,50 @@ public class Main {
         
         double bankNetWorth = bank.totalValue();
         System.out.println("Sum total value of all accounts in system: INR " + bankNetWorth);
+    }
+} */
+
+package oops.Banking;
+
+public class Main {
+    public static void main(String[] args) {
+        Bank bank = new Bank();
+
+        // Create a test account
+        long customerId = bank.createPersonalCustomer("Abhishek Gundabathula", "Hyderabad", "987654", "040123");
+        System.out.println("Customer registered with ID: " + customerId);
+
+        // --- TEST 1: Normal, Successful Deposit ---
+        try {
+            System.out.println("\n[Action] Depositing $1500...");
+            bank.deposit(customerId, 1500.00);
+            System.out.println("Result: Success! Balance is now: " + bank.getCustomer(customerId).getAccount().getBalance());
+        } catch (CustomerNotFoundException | InvalidAmountException e) {
+            System.out.println("Result: Failed -> " + e.getMessage());
+        }
+
+        // --- TEST 2: Testing InvalidAmountException ---
+        try {
+            System.out.println("\n[Action] Attempting a negative deposit (-250)...");
+            bank.deposit(customerId, -250.00);
+        } catch (CustomerNotFoundException | InvalidAmountException e) {
+            System.out.println("Result: Caught Expected Exception -> " + e.getMessage());
+        }
+
+        // --- TEST 3: Testing InsufficientFundsException ---
+        try {
+            System.out.println("\n[Action] Attempting to withdraw $5000 (More than balance)...");
+            bank.withdraw(customerId, 5000.00);
+        } catch (CustomerNotFoundException | InvalidAmountException | InsufficientFundsException e) {
+            System.out.println("Result: Caught Expected Exception -> " + e.getMessage());
+        }
+
+        // --- TEST 4: Testing CustomerNotFoundException ---
+        try {
+            System.out.println("\n[Action] Attempting withdrawal on a non-existent ID (88888)...");
+            bank.withdraw(88888L, 100.00);
+        } catch (CustomerNotFoundException | InvalidAmountException | InsufficientFundsException e) {
+            System.out.println("Result: Caught Expected Exception -> " + e.getMessage());
+        }
     }
 }

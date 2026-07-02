@@ -16,6 +16,10 @@ class Vehicle{
         console.log (" Systems nominal. Safety checks passed.");
         return true;
     }
+
+
+
+    
     startEngine(){
         if (!this.isEngineOn) {
             if (this.#internalDiagnosticCheck()) {
@@ -27,6 +31,7 @@ class Vehicle{
         }
     }
     speedUp(increment){
+
         if(this.isEngineOn){
             this.currentSpeed += increment;
             this.currentSpeed = Math.min(this.currentSpeed, this.maxSpeed);
