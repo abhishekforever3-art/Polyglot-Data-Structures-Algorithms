@@ -1,6 +1,6 @@
 public class SmithNumber {
     public static void main(String[] args) {
-        int n = 58;
+        int n = 666;
         int temp = n;
         int sum = 0;
         boolean isPrime = true;

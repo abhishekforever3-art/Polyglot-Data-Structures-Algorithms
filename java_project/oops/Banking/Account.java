@@ -22,6 +22,7 @@ public class Account {
     public double getBalance (){
         return balance;
     }
+    
 
     public Date getDateOpened(){
         return dateOpened;

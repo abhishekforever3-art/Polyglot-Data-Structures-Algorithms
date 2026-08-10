@@ -34,6 +34,7 @@ public class Bank {
         throw new CustomerNotFoundException("Business Error: Customer with ID " + customerId + " does not exist.");
     }
 
+    
     public void deposit(long customerId, double amount) throws CustomerNotFoundException, InvalidAmountException {
         Customer c = getCustomer(customerId); 
         c.getAccount().deposit(amount);       
