@@ -359,16 +359,16 @@
 
 # -----------------------------------------------------------------------------------------------------------
 # 31. Second Largest Element in a List
-# lst = list(map(int, input("Enter list elements separated by space: ").split()))
+lst = list(map(int, input("Enter list elements separated by space: ").split()))
 
-# unique_lst = list(set(lst)) #set(lst): Converts the list into a set, which automatically removes all duplicate numbers
-# unique_lst.sort()#Sorts the list in ascending order (from smallest to largest).
+unique_lst = list(set(lst)) #set(lst): Converts the list into a set, which automatically removes all duplicate numbers
+unique_lst.sort()#Sorts the list in ascending order (from smallest to largest).
 
-# if len(unique_lst) >= 2:#Checks if there are at least two distinct numbers in the list.
+if len(unique_lst) >= 2:#Checks if there are at least two distinct numbers in the list.
     
-#     print("Second Largest:", unique_lst[-2]) #unique_lst[-2]: Uses negative indexing to access the second-to-last item
-# else:
-#     print("No second largest element")
+    print("Second Largest:", unique_lst[-2]) #unique_lst[-2]: Uses negative indexing to access the second-to-last item
+else:
+    print("No second largest element")
 
 # -----------------------------------------------------------------------------------------------------------
 # 32. Remove Duplicates from a List
