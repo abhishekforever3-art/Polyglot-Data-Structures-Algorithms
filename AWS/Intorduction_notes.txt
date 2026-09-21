@@ -1,0 +1,79 @@
+Networking:
+
+* DNS
+
+
+* Ingress
+
+
+* Nginx
+
+
+* reverse proxy
+
+
+* SSL
+
+
+* SSH
+
+
+* IPV4/IPV6
+
+
+* Security Groups
+
+
+* VPC
+
+
+
+Categories of AWS Services:
+
+Compute:
+
+* EC2 elastic compute cloud
+
+
+* Elastic Beanstalk - for applications
+
+
+* Lambda - assimilar function
+
+
+* Elastic Container Service for running docker container
+
+
+* Elastic Container Registry store docker container
+
+
+* Elastic Kubernetes Service run Kubernetes service
+
+
+
+Storage:
+* S3
+
+
+* Elastic Block Store
+
+
+* Elastic File System
+
+
+* Glacier
+
+
+
+Database:
+
+* RDS
+
+
+* DynamoDB
+
+
+* Redshift
+
+
+* ElastiCache
