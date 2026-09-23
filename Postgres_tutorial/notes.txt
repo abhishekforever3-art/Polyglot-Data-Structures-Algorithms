@@ -1,0 +1,217 @@
+Sample DB:
+dbname : pgtestdb
+username : postgres
+password : bN=GUAH9ewHb!
+end point: pg-test-db.ccforlwma7t3.ca-central-1.rds.amazonaws.com
+port : 5432
+
+https://www.postgresqltutorial.com/postgresql-create-table/
+
+Docker:
+docker run --name pg11 -e POSTGRES_PASSWORD=root -d -p 5432:5432 postgres
+docker exec -it pg11 bash
+
+docker start pg11
+
+psql -h 0.0.0.0 -p 5432 -U postgres
+
+psql -h 127.0.0.1 -p 5432 -U postgres
+
+docker exec -it kwikee_postgres_1 psql -U kwikee
+
+psql -h 165.225.36.90 -p 5432 -U postgres
+psql -h 120.0.0.1 -p 5432 -U postgres
+psql -h localhost -p 5432 -U postgres
+
+172.17.0.3
+psql -h 172.17.0.3 -p 5432 -U postgres
+
+psql postgresql://postgres:root@localhost:5432/postgres
+
+# show databases
+\l
+
+# show size of the database
+\l+
+#
+show roles
+\du
+
+#
+switch database
+\c db_name
+
+#
+list tables in the database
+\dt
+
+#
+show schema table
+\dt+
+
+#
+show specific schema tables
+\dt schema_name.*
+
+#
+specific tble
+\d table_name
+
+#
+select
+*
+from
+pg_catalog.pg_tables
+where
+schemaname != 'my_schema_name'
+and schemaname != 'pg_catalog';
+
+#
+Get current database
+SELECT current_database();
+
+or
+\c
+
+or
+
+SELECT * FROM current_catalog;
+
+#
+quit database
+\q
+
+#
+Create DB
+CREATE DATABASE rjdbtest;
+GRANT CONNECT ON DATABASE rjdbtest TO kwikee;
+https://www.digitalocean.com/docs/databases/postgresql/how-to/modify-user-privileges/
+
+#
+Connec to DB
+\c rjdbtest;
+
+CREATE TABLE CITY (
+    ID serial PRIMARY KEY,
+    NAME VARCHAR (50) UNIQUE NOT NULL,
+    STATE VARCHAR (50) NOT NULL,
+    COUNTRY VARCHAR (100) NOT NULL,
+    CREATED_AT TIMESTAMP NOT NULL
+);
+
+CREATE TABLE CITY (
+    NAME VARCHAR (50),
+    age INTEGER
+);
+
+INSERT INTO CITY (NAME, STATE, COUNTRY, CREATED_AT) VALUES ('Toronto', 'Ontario', 'Canada', NOW());
+INSERT INTO CITY (NAME, STATE, COUNTRY, CREATED_AT) VALUES ('Montreal', 'Quebec', 'Canada', NOW());
+
+INSERT INTO CITY (NAME, STATE, COUNTRY) VALUES ('Chennai', 'Tamilnadu', 'India');  
+INSERT INTO CITY (NAME, STATE, COUNTRY) VALUES ('Madurai', 'Tamilnadu', 'India');  
+
+INSERT INTO CITY (NAME, age) VALUES ('Toronto', 25);  
+
+CREATE TABLE CITY (  
+    CITYID serial PRIMARY KEY,  
+    CNAME VARCHAR (50) UNIQUE NOT NULL,  
+    STATE VARCHAR (50) NOT NULL  
+);  
+
+INSERT INTO CITY (CNAME, STATE) VALUES ('Toronto', 'Ontario');  
+INSERT INTO CITY (CNAME, STATE) VALUES ('Montreal', 'Quebec');  
+INSERT INTO CITY (CNAME, STATE) VALUES ('Chennai', 'Tamilnadu');  
+INSERT INTO CITY (CNAME, STATE) VALUES ('Madurai', 'Tamilnadu');  
+INSERT INTO CITY (CNAME, STATE) VALUES ('Waterloo', 'Ontario');  
+
+SELECT * FROM CITY;  
+
+SELECT * FROM CITY LIMIT 2;  
+SELECT * FROM CITY LIMIT 2 OFFSET 1;  
+https://www.postgresqltutorial.com/postgresql-limit/  
+
+#
+TORONNDB and TOURIST:
+CREATE DATABASE TORONNDB;
+
+\c toronndb
+
+DELETE FROM TOURIST;
+DROP TABLE TOURIST;
+
+CREATE TABLE TOURIST (
+    ID serial PRIMARY KEY,
+    NAME VARCHAR (50) UNIQUE NOT NULL,
+    AGE INTEGER NOT NULL
+);
+
+INSERT INTO TOURIST (NAME, AGE) VALUES ('Kevin', 23);
+INSERT INTO TOURIST (NAME, AGE) VALUES ('Jina', 19);
+
+SELECT * FROM TOURIST WHERE age > 18;
+
+More commands:
+https://stackoverflow.com/questions/769683/show-tables-in-postgresql
+
+if you face psycopg2 issue in alpine:
+https://github.com/uroybd/python3-psycopg2-alpine/issues/2
+
+Simple Python:
+https://gist.github.com/rajasgs/17fc2d4c83879891f3477fe3b3820ad5
+
+Sample App:
+https://github.com/teamtact/flask-rest-city-crud-postgresql/
+
+Flask - AWS RDS - Postgres - CRUD
+flask-aws-rds-postgres-crud-sqlite
+https://github.com/rajasgs/flask-aws-rds-postgres-crud-sqlite.git
+
+
+
+How to connect remote DB via Bastion Host?
+
+Remote DB:
+kde-dev.c67trnschlytf.us-east-1.rds.amazonaws.com
+
+Remote DB Port:
+5432
+
+Remote DB Username:
+kwikee
+
+Remote DB Password:
+kwikee
+
+Bastion Host:
+ec2-18-207-14-42.compute-1.amazonaws.com
+
+SSH Key Location:
+/Users/str-kwml0011/Desktop/plog-a/kde-dev-bastion.pem
+
+Syntax:
+ssh -N -L localPort:rdsHost:remotePort user@remoteHost -i ~/path/to/key -v
+
+ssh -N -L 2006:kde-dev.c67trnschlytf.us-east-1.rds.amazonaws.com:5432 ec2-user@ec2-18-207-14-42.compute-1.amazonaws.com -i "/Users/str-kwml0011/Desktop/plog-a/kde-dev-
+
+psql -h 0.0.0.0 -p 2006 -U kwikee
+
+How to verify after killing the ssh connection?
+psql -h 0.0.0.0 -p 2006 -U kwikee
+
+You will get error like below:
+psql: error: could not connect to server: could not connect to server: Connection refused
+Is the server running on host "0.0.0.0" and accepting
+TCP/IP connections on port 2006?
+
+--------------------------------------------------------------------------------
+
+Extract both schema and data from postgres database:
+pg_dump -U postgres postgres > dump.sql
+
+Extract schema only from postgres database:
+pg_dump -U postgres -s postgres > dump.sql
+
+Extract data only from postgres database:
+pg_dump -U postgres -a postgres > dump.sql
+
+http://www.sqlines.com/postgresql/how-to/pg_dump_database_file
