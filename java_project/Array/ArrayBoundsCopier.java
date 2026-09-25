@@ -13,7 +13,7 @@ public class ArrayBoundsCopier {
         }
         System.out.println("Sequence of A ");
         for (int i =0; i<b.length; i++){
-            b[i]=i+1*10;
+            b[i]=i+2*10;
             System.out.print(b[i]+"\t");
         }
         System.out.println("Sequence of b ");
